@@ -1,0 +1,93 @@
+body { margin: 0em; padding: 1em; background: black; font-family: sans-serif;}
+
+a {color: #d86803;}
+h3 a {color: black;}
+
+dt {font-weight: bold;}
+
+#homelink a {text-decoration: none; display: block; height: 40px; margin-top: 40px;}
+
+#topmenu ul{ display: block; margin: 10px 80px 0em 80px; padding: 0.4em; color: black; font-weight: bold; list-style-type: none; background: white; text-align: center; border: 1px solid black;}
+#topmenu ul li { display: inline; list-style-type: none; margin: 0px; padding: 0em; font-size: smaller;}
+#topmenu ul li a { text-transform: uppercase; color: black; text-decoration: none;  padding: 0em 2em;}
+#topmenu ul li a:hover {background: #ffe270; }
+
+#space { padding: 0px; margin: 0px; height: 2em;}
+#main {margin: 0em auto; background: no-repeat #ffcc00 url(bg.gif); border: 1px solid white; width: 780px;}
+
+#submenu {width: 80px; float: right; margin: 1em; padding: 1em;}
+#submenu ul { margin: 0em; padding: 0em; }
+#submenu ul li { list-style-type: square; margin: 0em 0em 0em 1em; padding: 0em 0em 0em 0em;}
+#submenu b { text-transform: uppercase; font-size: larger;}
+
+
+#body {margin: 0em 80px 0em 80px; padding: 1em; background: white; border: 1px solid black;}
+#body img.left {margin: 0em 1em 1em 0em; float: left; }
+#body img.right {margin: 0em 0em 1em 1em; float: right;}
+#body th {text-align: left; padding-right: 1em;}
+#body a img {border: 0px solid;}
+#footer { margin: 0em 80px 2em 80px; padding: 1em; background: #d86803; color: white; border: 1px solid black; border-top: 0px solid;}
+
+h1 {text-transform: uppercase; font-weight: normal;}
+h2 {text-transform: uppercase; font-weight: normal;}
+p {text-align: justify;}
+
+.katalog {clear: both; border-top: 2px solid #ffcc00; }
+.katalog h3 { padding: 0.2em 0.5em; margin: 1.2em -0.5em 0.5em -0.5em; font-size: 175%; font-weight: normal; color: #9D4C00;}
+.katalog h3 a {text-decoration: none;  display: block;  color: #9D4C00;}
+.katalog h3 a:hover {text-decoration: none; background: #ffe270;}
+.kdejsem {margin-right: 10px;}
+#body .katalog a img {border: 2px solid black; margin: 0em 1em; }
+#body .katalog a:hover img {border: 2px solid #9D4C00; }
+.katalog .datum {font-size: smaller; margin: -1em 0px 1em 0px; padding: 0px;}
+
+.inputerr input, .inputerr textarea { border: 3px solid red;}
+
+#podporte { margin: 0.5em; text-align: center;}
+#podporte a img {border: 0px solid;}
+#podporte a { font-weight: bold; text-decoration: none; color: white; }
+
+.figure {text-align: center; font-style: italic; width: 300px; margin: 0px auto;}
+.figure p {text-align: center;}
+
+.datum {font-size: small; margin: 0px; padding: 0px;}
+.datum span.thinsp {font-size: smaller}
+
+table.noborder, table.noborder tr, table.noborder td, table.noborder th {border-width: 0px;}
+
+table, tr, td {border: 1px solid black; border-collapse: collapse;}
+.center {text-align: center;}
+
+/*
+#goog-wm { }
+#goog-wm h3.closest-match { }
+#goog-wm h3.closest-match a { }
+#goog-wm h3.other-things { }
+#goog-wm ul li { }
+#goog-wm li.search-goog { display: block; }
+*/
+
+#goog-wm { }
+#goog-wm h3.closest-match { }
+#goog-wm h3.closest-match a { }
+#goog-wm h3.other-things { display: none; }
+#goog-wm ul li { }
+#goog-wm li.search-goog { display: none; }
+
+#komentare {margin-top: 1em; border-top: 1px solid black;}
+
+#komentare .komentar { border-bottom: 1px solid #d86803; padding: 1em 0px 0px 0px; width: 85%; margin: 0px auto;}
+#komentare .datum {padding-left: 1em;}
+#komentare .autor {font-weight: bold;}
+#komentare .nazev {font-weight: bold;}
+#komentare p {margin-top: 0px;}
+
+#komentare2 { padding-top: 1em; width: 85%; margin: 0em auto; }
+#komentare2 table { border: 0px solid; width: 100%; }
+#komentare2 tr { border: 0px solid;}
+#komentare2 td { border: 0px solid; padding: 0.2em 2em 0.2em 0em;}
+
+#komentare2 input {width: 100%;}
+#komentare2 .odeslat {text-align: center;}
+
+.tablecenter {margin-left: auto; margin-right: auto; text-align:center; }

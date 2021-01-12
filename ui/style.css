@@ -1,0 +1,60 @@
+/* Color template */
+body {background: #ddd;}
+#homelink, div.katalog, #topmenu, #komentare, #komentare2, #footer
+{ border-color: #FFC373;}
+
+#homelink, #homelink a
+{background: #FFAD40; color: black;}
+
+
+
+body {font-family: sans-serif;}
+
+#main {margin: 0em auto; background: white; max-width: 800px;}
+
+#homelink {border-width: 10px 0px; border-style: solid none; padding: 1em 2em;}
+#homelink a {text-decoration: none; font-size: 300%; font-weight: bold; display: block;}
+
+#topmenu {margin: 0px; padding: 0em; border-width: 0px 0px 10px 0px; border-style: solid;}
+#topmenu ul{ list-style-type: none;  margin: 1em; padding: 0em; text-align: left; }
+#topmenu ul li { list-style-type: none; margin: 0px; padding: 1em; font-size: 110%; display: inline;}
+#topmenu ul li a { text-decoration: none; font-weight: bold; color: black;}
+#topmenu ul li a:hover {color: gray; }
+
+
+#body {margin: 0px; padding: 0px; }
+div.katalog {margin: 0em -2em; padding: 0em 2em 0em 2em; border-width: 10px 0px 0px 0px; border-style: solid; clear: both;}
+
+div.bodyperex, div.bodystr, div.bodyfotka {padding: 0em 2em 0em 2em;}
+div.bodystr {}
+
+h2 {font-size: 150%;}
+h3 a { text-decoration: none; color: black;}
+h3 {color: black; font-size: 130%; padding: 1.2em 0em 0.6em 0em; margin: 0px;}
+p.datum { padding: 0px; margin: -11pt 0em 0em 0em; color: gray;}
+
+a:hover {color: gray; }
+a {color: #d86803; }
+
+p {text-align: justify;}
+
+.figure {text-align: center; font-style: italic; width: 300px; margin: 0px auto;}
+.figure p {text-align: center;}
+.tablecenter {margin-left: auto; margin-right: auto; text-align:center; }
+.kdejsem {margin-right: 10px;}
+
+#body img.left {margin: 0em 1em 1em 0em; float: left; }
+#body img.right {margin: 0em 0em 1em 1em; float: right;}
+p.cele {clear: both;}
+
+
+.thr th {text-align: right;}
+.thr td {text-align: left; padding-left: 1em;}
+
+#komentare, #komentare2 {margin: 0em -2em; padding: 2em 2em 2em 2em; border-width: 10px 0px 0px 0px; border-style: solid;}
+
+#footer { padding: 1em 2em; border-width: 10px 0px 10px 0px; border-style: solid;}
+
+#podporte { margin: 1em; text-align: center;}
+#podporte a img {border: 0px solid;}
+#podporte a { font-weight: bold; text-decoration: none; color: black; }
