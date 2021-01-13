@@ -1,0 +1,14 @@
+<div id="homelink"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
+<div id="topmenu">
+    <ul>
+        <li><a href="{{ site.baseurl }}/">Aktuálně</a></li>
+      {% assign pages_list = site.pages | sort:"order" %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <li><a class="{% if page.url == node.url %}active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+</div>

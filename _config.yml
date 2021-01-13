@@ -1,0 +1,34 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            JayBee
+url:              http://j123b567.github.io/
+baseurl:
+
+author:
+  name:           'Jan Breuer'
+  url:            http://jaybee.cz
+
+# paginate:         10
+# paginate_path:    "/posts/page:num/"
+
+github:
+  repo:           https://github.com/j123b567
+
+collections:
+  software:
+    output: true
+    permalink: /software/:path/
+
+defaults:
+ - scope:
+     path: ""
+     type: software
+   values:
+     layout: page

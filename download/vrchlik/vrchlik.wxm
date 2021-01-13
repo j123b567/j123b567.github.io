@@ -1,0 +1,57 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.2 ] */
+
+/* [wxMaxima: input   start ] */
+assume(a>0);assume(b>0); assume(a>b); assume(alfa>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve((x/a)^2+(y/b)^2=1,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve((x/a)^2+(y/b)^2=1,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=(b*sqrt(a^2-x^2))/a;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+radcan(f(x)*sqrt(1+diff(f(x),x)^2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+2*%pi*integrate(%,x,0,alfa);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+P(alfa):= (2*%pi*b*((alfa*b^2-a^2*alfa)*sqrt(alfa^2*b^2-a^2*alfa^2+a^4)-a^4*sqrt(a^2-b^2)*asin((alfa*sqrt(a^2-b^2))/a^2)))/(a^2*(2*b^2-2*a^2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+P(a*sqrt(b^2-(b-v)^2)/b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(%);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Povrch(a,b,v):=((%pi*b^2-%pi*a^2)*sqrt(2*b*v-v^2)*sqrt(-(a^2*b^2-a^4)*v^2-(2*a^4*b-2*a^2*b^3)*v+a^4*b^2)-%pi*a^3*b^2*sqrt(a^2-b^2)*asin((sqrt(a^2-b^2)*sqrt(2*b*v-v^2))/(a*b)))/(a*b^3-a^3*b);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+float(Povrch(89.2/2,65.7/2,v));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(%);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(%);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

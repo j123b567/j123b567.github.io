@@ -58,3 +58,7 @@ p.cele {clear: both;}
 #podporte { margin: 1em; text-align: center;}
 #podporte a img {border: 0px solid;}
 #podporte a { font-weight: bold; text-decoration: none; color: black; }
+
+.katalog img { float: right; margin: 0 0 1em 1em; }
+figure { text-align: center; }
+img { max-width: 100%; }
