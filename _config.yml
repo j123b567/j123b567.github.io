@@ -8,12 +8,12 @@ permalink:        pretty
 
 # Setup
 title:            JayBee
-url:              http://j123b567.github.io/
+url:              https://www.jaybee.cz
 baseurl:
 
 author:
   name:           'Jan Breuer'
-  url:            http://jaybee.cz
+  url:            http://www.jaybee.cz
 
 # paginate:         10
 # paginate_path:    "/posts/page:num/"
