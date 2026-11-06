@@ -21,7 +21,7 @@ order: 30
 <ul class="profily">
     <li>
         <img src="/images/favicon-linkedin.png" alt="" width="16" height="16">
-        <span><a href="https://www.linkedin.com/pub/jan-breuer/b/349/a36/">LinkedIn</a> Online životopis</span>
+        <span><a href="https://www.linkedin.com/in/jan-breuer-a36349b/">LinkedIn</a> Online životopis</span>
     </li>
     <li>
         <img src="/images/favicon-openstreetmaps.png" alt="" width="16" height="16">
