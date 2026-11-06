@@ -4,12 +4,12 @@ lang: en
 date: 2017-05-02
 ---
 
-I have implemented support for Precise Time Protocol in STM32 and it still
-performed bad. After some investigation, I have descovered stability problems
-of HSE.
+I have implemented support for Precision Time Protocol on STM32 and it still
+performed badly. After some investigation, I discovered stability problems
+with the HSE.
 
-I have reported these problems to the ST, they have confirmed this behavior
-but unfortunately, it does not appear in any errata of SMT32 line. The problem
+I reported these problems to ST and they confirmed this behavior, but
+unfortunately, it does not appear in any errata for the STM32 line. The problem
 was discovered on STM32F107 and later confirmed on STM32F207 and STM32F407.
 
 <figure>
@@ -17,29 +17,29 @@ was discovered on STM32F107 and later confirmed on STM32F207 and STM32F407.
   <figcaption>STM32 HSE test connection</figcaption>
 </figure>
 
-I used several evaluation boards with ST's MCU. I did just internal
-connection of HSE directly to MCO output of the microcontroller so no PLL was
-used. The program in the MCU performs just infinite loop after configuring the
-MCO. Using MCO also enables measurement of other clock sources and I was able
-to connect frequency counter directly to the microcontroller.
+I used several evaluation boards with ST MCUs. I just connected the HSE
+internally to the MCO output of the microcontroller, so no PLL was used. The
+program in the MCU just runs an infinite loop after configuring the MCO. Using
+MCO also enables measurement of other clock sources, and I was able to connect
+a frequency counter directly to the microcontroller.
 
-I was measuring frequency every second and storing it using GPIB and SCPI to
-the PC. After some minutes there ware enough data. The base frequency of the
-oscillator was <em>24999407,7 Hz</em>, but it was not stable! I assumed, thet
-there would be visible just temperature drift but it was not true. Measured
-frequency was hopping within several Hz. Depending on X-tal, these spikes ware
+I was measuring the frequency every second and storing it on the PC using GPIB
+and SCPI. After a few minutes, there was enough data. The base frequency of the
+oscillator was <em>24999407.7 Hz</em>, but it was not stable! I assumed that
+only temperature drift would be visible, but that was not true. The measured
+frequency was hopping by several Hz. Depending on the X-tal, these spikes were
 from 2 Hz to 8 Hz.
 
 <figure>
   <img src="/images/stm32-xtal/stm32freq.svg" alt="" />
-  <figcaption>STM32 HSE instability<br />(base frequency 24999407,7 Hz)</figcaption>
+  <figcaption>STM32 HSE instability<br />(base frequency 24999407.7 Hz)</figcaption>
 </figure>
 
-I did't perform any tests of HSI, but for precise time, RC oscillator was
-no-go anyway for me.
+I didn't perform any tests of the HSI, but for precise time, an RC oscillator
+was a no-go for me anyway.
 
-Only solution for this was to use complete external oscillator at 25 MHz
-that was stable enough. With external oscillator, I was able to reach expected
-performance of the Precise Time Protocol.
+The only solution was to use a complete external 25 MHz oscillator that was
+stable enough. With the external oscillator, I was able to reach the expected
+performance of the Precision Time Protocol.
 
-Also others confirmed this behaviour [https://blog.dan.drown.org/gps-module-measurements/](https://blog.dan.drown.org/gps-module-measurements/)
+Others have also confirmed this behavior: [https://blog.dan.drown.org/gps-module-measurements/](https://blog.dan.drown.org/gps-module-measurements/)
