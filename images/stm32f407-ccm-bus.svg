@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 640" width="520" height="640" role="img" aria-labelledby="t">
+  <title id="t">STM32F407 debug access paths under RDP1</title>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif; font-size: 15px; fill: #1f1f1f; }
+    .b { font-weight: 700; }
+    .m { font-family: ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace; font-size: 13px; fill: #6b6b6b; }
+    .c { text-anchor: middle; }
+    .r { text-anchor: end; }
+    .box { fill: #fff; stroke: #c8c8c8; stroke-width: 1.5; }
+    .bus { fill: #FFF4E5; stroke: #FFC373; stroke-width: 1.5; }
+    .sub { fill: #f6f6f6; stroke: #c8c8c8; stroke-width: 1.5; }
+    .ln { stroke: #FFAD40; stroke-width: 3; fill: none; }
+    .no { fill: #fde4e2; stroke: #d9534f; }
+    .no + text { fill: #a12a26; }
+    .ok { fill: #e4f3e1; stroke: #4a9a3f; }
+    .ok + text { fill: #2c6b23; }
+    .badge { font-size: 12px; font-weight: 700; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#FFAD40"/>
+    </marker>
+  </defs>
+
+  <!-- Bus masters -->
+  <rect class="box" x="10" y="10" width="240" height="56" rx="6"/>
+  <text class="b c" x="130" y="34">Debugger</text>
+  <text class="m c" x="130" y="54">SWD → DP → AHB-AP</text>
+  <rect class="box" x="270" y="10" width="240" height="56" rx="6"/>
+  <text class="b c" x="390" y="34">CPU core</text>
+  <text class="m c" x="390" y="54">data accesses</text>
+  <path class="ln" d="M130 66V92" marker-end="url(#a)"/>
+  <path class="ln" d="M390 66V92" marker-end="url(#a)"/>
+
+  <!-- Core bus matrix -->
+  <rect x="10" y="96" width="500" height="40" rx="6" fill="#FFAD40"/>
+  <text class="b c" x="260" y="121">Cortex-M4 internal bus matrix</text>
+
+  <!-- Spines -->
+  <path class="ln" d="M40 136V555M40 171H60M40 339H60M40 555H60"/>
+  <path class="ln" d="M80 188V279M80 222H100M80 279H100"/>
+  <path class="ln" d="M80 356V386H100"/>
+  <path class="ln" d="M120 404V492M120 438H140M120 492H140"/>
+  <path class="ln" d="M80 572V604H100"/>
+
+  <!-- D-code bus -->
+  <rect class="bus" x="60" y="154" width="450" height="34" rx="6"/>
+  <text class="b" x="72" y="176">D-code bus</text>
+  <text class="m r" x="498" y="176">0x0000_0000–0x1FFF_FFFF</text>
+
+  <rect class="box" x="100" y="200" width="410" height="44" rx="6"/>
+  <text x="112" y="227">Flash interface → flash</text>
+  <rect class="no" x="392" y="210" width="106" height="24" rx="4"/>
+  <text class="badge" x="445" y="227">RDP1 blocks</text>
+
+  <rect class="box" x="100" y="254" width="410" height="50" rx="6"/>
+  <text x="112" y="275">CCM RAM, 64 KiB</text>
+  <text class="m" x="112" y="294">0x1000_0000</text>
+  <rect class="ok" x="392" y="267" width="106" height="24" rx="4"/>
+  <text class="badge" x="445" y="284">readable</text>
+
+  <!-- System bus -->
+  <rect class="bus" x="60" y="322" width="450" height="34" rx="6"/>
+  <text class="b" x="72" y="344">System bus</text>
+  <text class="m r" x="498" y="344">0x2000_0000 and up</text>
+
+  <rect class="sub" x="100" y="368" width="410" height="36" rx="6"/>
+  <text class="b" x="112" y="391">STM32 multi-AHB bus matrix</text>
+
+  <rect class="box" x="140" y="416" width="370" height="44" rx="6"/>
+  <text x="152" y="443">SRAM 128 KiB, peripherals</text>
+  <rect class="ok" x="392" y="426" width="106" height="24" rx="4"/>
+  <text class="badge" x="445" y="443">readable</text>
+
+  <rect class="box" x="140" y="470" width="370" height="44" rx="6"/>
+  <text x="152" y="497">Backup SRAM 4 KiB</text>
+  <rect class="no" x="392" y="480" width="106" height="24" rx="4"/>
+  <text class="badge" x="445" y="497">RDP1 blocks</text>
+
+  <!-- PPB -->
+  <rect class="bus" x="60" y="538" width="450" height="34" rx="6"/>
+  <text class="b" x="72" y="560">PPB</text>
+  <text class="m r" x="498" y="560">0xE000_0000 and up</text>
+
+  <rect class="box" x="100" y="584" width="410" height="40" rx="6"/>
+  <text x="112" y="609">Debug and core registers</text>
+</svg>

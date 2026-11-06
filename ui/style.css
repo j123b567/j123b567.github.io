@@ -251,3 +251,7 @@ p.archiv {
     #main { box-shadow: none; max-width: none; }
     #topmenu, #podporte, a.cele { display: none; }
 }
+
+figure.diagram { margin: 1.5rem 0; }
+figure.diagram img { display: block; margin: 0 auto; width: 100%; max-width: 520px; }
+figure.diagram figcaption { margin-top: 0.5rem; }

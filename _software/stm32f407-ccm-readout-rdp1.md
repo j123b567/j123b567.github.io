@@ -83,18 +83,11 @@ one inside the core. The core routes each access by address (simplified;
 the internal bus interfaces are described in the [Cortex-M4 Technical
 Reference Manual][cm4trm], RM0090 covers only the STM32 side):
 
-```
-  SWD ── DP ── AHB-AP ─┐
-                       │   Cortex-M4 internal bus matrix
-  CPU core (data) ─────┤
-                       ├── D-code bus (0x0000_0000–0x1FFF_FFFF, "Code" region)
-                       │      ├── flash interface ──> flash      <- RDP1 blocks here
-                       │      └── CCM (0x1000_0000)              <- no check
-                       ├── System bus (0x2000_0000 and up)
-                       │      └── STM32 bus matrix ─┬─> SRAM, peripherals
-                       │                            └─> backup SRAM  <- RDP1 blocks
-                       └── PPB (0xE000_0000 and up) ──> debug and core registers
-```
+<figure class="diagram">
+  <a href="/images/stm32f407-ccm-bus.svg"><img src="/images/stm32f407-ccm-bus.svg" width="520" height="640"
+    alt="Debugger (SWD, DP, AHB-AP) and CPU core both enter the Cortex-M4 internal bus matrix. The D-code bus (0x0000_0000 to 0x1FFF_FFFF) leads to the flash interface, where RDP1 blocks access, and to CCM RAM at 0x1000_0000 with no check. The System bus (0x2000_0000 and up) leads through the STM32 multi-AHB bus matrix to SRAM and peripherals, which are readable, and to backup SRAM, where RDP1 blocks access. The PPB (0xE000_0000 and up) leads to debug and core registers."></a>
+  <figcaption>Debug access paths on STM32F407 (simplified)</figcaption>
+</figure>
 
 Address `0x1000_0000` lies in the Cortex-M "Code" region, so an AHB-AP read
 of it goes over the D-code bus. RM0090 section 2.1.2 says that the D-bus
