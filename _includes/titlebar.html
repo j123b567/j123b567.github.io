@@ -1,4 +1,25 @@
-<header id="homelink"><a href="{{ site.baseurl }}/">{{ site.title }}</a></header>
+<header id="homelink">
+    <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    {%- if page.url == "/" %}
+    <p class="tagline">{{ site.tagline_lead }} <strong id="tagline">{{ site.taglines | first }}</strong></p>
+    <script>
+        (function () {
+            var t = {{ site.taglines | jsonify }};
+            var el = document.getElementById("tagline");
+            var i = Math.floor(Math.random() * t.length);
+            el.textContent = t[i];
+            setInterval(function () {
+                el.classList.add("out");
+                setTimeout(function () {
+                    i = (i + 1) % t.length;
+                    el.textContent = t[i];
+                    el.classList.remove("out");
+                }, 400);
+            }, 5000);
+        })();
+    </script>
+    {%- endif %}
+</header>
 <nav id="topmenu" aria-label="Hlavní menu">
     <ul>
         <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Články</a></li>

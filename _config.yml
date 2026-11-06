@@ -12,7 +12,14 @@ permalink:        pretty
 
 # Setup
 title:            JayBee
-description:      Software, elektronika a embedded systémy – projekty a články Jana Breuera.
+description:      "Doplňuji, co jinde chybí: dokumentaci, kterou nikdo nenapsal, knihovnu, kterou každý psal znovu, nástroj, který neexistoval, chybu hardwaru, která se nedostala ani do errat."
+# Header subtitle: fixed lead followed by endings that rotate; the first ending is the default
+tagline_lead:     "Doplňuji, co jinde chybí:"
+taglines:
+  - dokumentaci, kterou nikdo nenapsal.
+  - knihovnu, kterou každý psal znovu.
+  - nástroj, který neexistoval.
+  - chybu hardwaru, která se nedostala ani do errat.
 lang:             cs
 url:              https://www.jaybee.cz
 baseurl:
