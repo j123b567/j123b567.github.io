@@ -1,6 +1,7 @@
 # Dependencies
 plugins:
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 markdown:         kramdown
 highlighter:      rouge

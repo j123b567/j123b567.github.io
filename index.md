@@ -1,8 +1,13 @@
 ---
 title: ""
+redirect_from:
+  - /software/
 ---
 
 <div class="bodystr seznam">
-{% include article-list.html limit=5 %}
-<p class="archiv"><a href="{{ '/software/' | relative_url }}">Všechny články <span aria-hidden="true">→</span></a></p>
+{% include article-list.html limit=3 %}
+<section class="starsi">
+<h2>Starší články</h2>
+{% include article-list.html offset=3 compact=true %}
+</section>
 </div>

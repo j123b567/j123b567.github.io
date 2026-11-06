@@ -1,7 +1,7 @@
 <header id="homelink"><a href="{{ site.baseurl }}/">{{ site.title }}</a></header>
 <nav id="topmenu" aria-label="Hlavní menu">
     <ul>
-        <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Aktuálně</a></li>
+        <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Články</a></li>
       {%- assign pages_list = site.pages | sort:"order" %}
       {%- for node in pages_list %}
         {%- if node.title != null and node.layout == "page" %}

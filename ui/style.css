@@ -202,8 +202,7 @@ figcaption { color: var(--muted); font-size: 0.9rem; font-style: italic; }
 .katalog img { float: right; max-width: min(40%, 240px); margin: 0.25rem 0 0.75rem 1rem; border-radius: 4px; }
 .perex > :last-child { margin-bottom: 0.75rem; }
 
-/* "Číst dál" and "Všechny články" share one link style */
-a.cele, p.archiv a {
+a.cele {
     display: inline-block;
     padding: 0.3rem 0.8rem;
     border-radius: var(--radius);
@@ -213,14 +212,44 @@ a.cele, p.archiv a {
     font-weight: 600;
     text-decoration: none;
 }
-a.cele:hover, p.archiv a:hover { background: var(--accent); color: #000; }
-a.cele span, p.archiv a span { display: inline-block; transition: transform 0.15s ease; }
-a.cele:hover span, p.archiv a:hover span { transform: translateX(3px); }
+a.cele:hover { background: var(--accent); color: #000; }
+a.cele span { display: inline-block; transition: transform 0.15s ease; }
+a.cele:hover span { transform: translateX(3px); }
 
-p.archiv {
+/* Compact list of older articles */
+.starsi {
     margin: 0 calc(-1 * var(--gutter));
-    padding: 1.25rem var(--gutter) 0;
+    padding: 0.25rem var(--gutter) 0;
     border-top: var(--stripe) solid var(--accent-light);
+}
+.starsi h2 { margin: 1.25rem 0 0.75rem; font-size: 1.35rem; }
+ul.archiv { list-style: none; margin: 0; padding: 0; }
+ul.archiv li {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr auto;
+    gap: 0 1rem;
+    align-items: baseline;
+    margin: 0;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--line);
+}
+ul.archiv li:first-child { border-top: 0; }
+ul.archiv time { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+ul.archiv a { font-weight: 600; line-height: 1.35; text-decoration: none; }
+ul.archiv a:hover { text-decoration: underline; }
+.jazyk {
+    padding: 0.05rem 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+@media (max-width: 30rem) {
+    ul.archiv li { grid-template-columns: 1fr auto; }
+    ul.archiv time { grid-column: 1 / -1; font-size: 0.85rem; }
 }
 
 /* Footer */
@@ -243,7 +272,7 @@ p.archiv {
 #podporte a:hover { color: var(--link-hover); }
 
 @media (prefers-reduced-motion: reduce) {
-    a.cele span, p.archiv a span { transition: none; }
+    a.cele span { transition: none; }
 }
 
 @media print {

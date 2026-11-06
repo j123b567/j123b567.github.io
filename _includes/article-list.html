@@ -1,9 +1,22 @@
 {%- comment -%}
-List of articles from the software collection. Parameter: limit (optional).
+List of articles from the software collection.
+Parameters: limit (optional), offset (optional), compact (optional, title and date only).
 {%- endcomment -%}
 {%- assign pages_list = site.software | sort:"date" | reverse %}
 {%- assign list_limit = include.limit | default: pages_list.size %}
-{%- for post in pages_list limit:list_limit %}
+{%- assign list_offset = include.offset | default: 0 %}
+{%- if include.compact %}
+<ul class="archiv">
+{%- for post in pages_list offset:list_offset limit:list_limit %}
+    <li lang="{{ post.lang }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d. %-m. %Y" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="jazyk" lang="cs" title="{% if post.lang == 'en' %}anglicky{% else %}česky{% endif %}">{% if post.lang == "en" %}EN{% else %}CZ{% endif %}</span>
+    </li>
+{%- endfor %}
+</ul>
+{%- else %}
+{%- for post in pages_list offset:list_offset limit:list_limit %}
 <article class="katalog" lang="{{ post.lang }}">
     <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
     <p class="datum"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d. %-m. %Y" }}</time></p>
@@ -13,3 +26,4 @@ List of articles from the software collection. Parameter: limit (optional).
     <a class="cele" href="{{ post.url | relative_url }}" aria-label="{% if post.lang == 'en' %}Read more: {% else %}Číst dál: {% endif %}{{ post.title | escape }}">{% if post.lang == "en" %}Read more{% else %}Číst dál{% endif %} <span aria-hidden="true">→</span></a>
 </article>
 {%- endfor %}
+{%- endif %}
