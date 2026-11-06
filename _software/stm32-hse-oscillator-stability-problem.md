@@ -1,5 +1,6 @@
 ---
 title: STM32 HSE oscillator stability problem
+lang: en
 date: 2017-05-02
 ---
 

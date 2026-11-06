@@ -12,8 +12,8 @@ mikroprocesorových systémů sme vytvořili platformu Sleepy Cat. Součástí
 této platformy je vývojové prostředí [Sleepy Cat IDE](http://pck338-242.feld.cvut.cz/scide/) a vývojová
 deska [Sleepy Cat Kit](http://pck338-242.feld.cvut.cz/sckit/).
 
-Vývojové prostředí Sleepy Cat IDE je založeno na platformě [NetBeans](http://netbeans.org). Bylo upraveno pro potřeby vývoje
+Vývojové prostředí Sleepy Cat IDE je založeno na platformě [NetBeans](https://netbeans.apache.org). Bylo upraveno pro potřeby vývoje
 aplikací pro mikrokontrolér s&nbsp;jádrem ARM. Obsahuje vývojové nástroje [GNU Tools for ARM Embedded
-Processors](https://launchpad.net/gcc-arm-embedded), [OpenOCD](http://openocd.sourceforge.net/).
+Processors](https://launchpad.net/gcc-arm-embedded), [OpenOCD](https://openocd.org/).
 
 <!--more-->

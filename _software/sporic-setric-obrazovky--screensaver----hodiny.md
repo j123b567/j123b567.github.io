@@ -67,7 +67,7 @@ Ještě musím uvést klíčové slovo „zdarma“ abych se umisťoval ve
 vyhledáváčích výš ;)
 
 Nejsem správný obchodník a proto zveřejňuji odkaz na konkurenční port
-stejného spořiče na windows – [Klock od Oskara](https://web.archive.org/web/20080225073018/http://shell.sh.cvut.cz/~oskar/blog/index.php?entry=entry061014-132530) A další konkurence, tentokrát na MacOS X [http://clocksaver.sourceforge.net/](http://clocksaver.sourceforge.net/)
+stejného spořiče na windows – [Klock od Oskara](https://web.archive.org/web/20080225073018/http://shell.sh.cvut.cz/~oskar/blog/index.php?entry=entry061014-132530) A další konkurence, tentokrát na MacOS X [https://clocksaver.sourceforge.net/](https://clocksaver.sourceforge.net/)
 Zatím uvažuji, jak se mám postavit ke zdrojáku, protože jsem použil volně
 dostupnou komponentu, kterou jsem ale od základu přepsal a opravil, takže
 nezbyl ani její název, jen komentáře uvnitř zdrojáku. Takže níže je

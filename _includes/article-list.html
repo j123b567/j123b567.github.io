@@ -1,0 +1,15 @@
+{%- comment -%}
+List of articles from the software collection. Parameter: limit (optional).
+{%- endcomment -%}
+{%- assign pages_list = site.software | sort:"date" | reverse %}
+{%- assign list_limit = include.limit | default: pages_list.size %}
+{%- for post in pages_list limit:list_limit %}
+<article class="katalog" lang="{{ post.lang }}">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="datum"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d. %-m. %Y" }}</time></p>
+    <div class="perex">
+        {{ post.excerpt | replace: "<h2", "<h3" | replace: "</h2>", "</h3>" | replace: '<img ', '<img loading="lazy" ' }}
+    </div>
+    <a class="cele" href="{{ post.url | relative_url }}" aria-label="{% if post.lang == 'en' %}Read more: {% else %}Číst dál: {% endif %}{{ post.title | escape }}">{% if post.lang == "en" %}Read more{% else %}Číst dál{% endif %} <span aria-hidden="true">→</span></a>
+</article>
+{%- endfor %}

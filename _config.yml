@@ -1,4 +1,7 @@
 # Dependencies
+plugins:
+  - jekyll-seo-tag
+
 markdown:         kramdown
 highlighter:      rouge
 
@@ -8,12 +11,14 @@ permalink:        pretty
 
 # Setup
 title:            JayBee
+description:      Software, elektronika a embedded systémy – projekty a články Jana Breuera.
+lang:             cs
 url:              https://www.jaybee.cz
 baseurl:
 
 author:
   name:           'Jan Breuer'
-  url:            http://www.jaybee.cz
+  url:            https://www.jaybee.cz
 
 # paginate:         10
 # paginate_path:    "/posts/page:num/"
@@ -32,3 +37,7 @@ defaults:
      type: software
    values:
      layout: page
+ - scope:
+     path: ""
+   values:
+     lang: cs

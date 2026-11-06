@@ -1,14 +1,12 @@
-<div id="homelink"><a href="{{ site.baseurl }}/">{{ site.title }}</a></div>
-<div id="topmenu">
+<header id="homelink"><a href="{{ site.baseurl }}/">{{ site.title }}</a></header>
+<nav id="topmenu" aria-label="Hlavní menu">
     <ul>
-        <li><a href="{{ site.baseurl }}/">Aktuálně</a></li>
-      {% assign pages_list = site.pages | sort:"order" %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <li><a class="{% if page.url == node.url %}active{% endif %}" href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+        <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Aktuálně</a></li>
+      {%- assign pages_list = site.pages | sort:"order" %}
+      {%- for node in pages_list %}
+        {%- if node.title != null and node.layout == "page" %}
+        <li><a href="{{ site.baseurl }}{{ node.url }}"{% if page.url == node.url %} class="active" aria-current="page"{% endif %}>{{ node.title }}</a></li>
+        {%- endif %}
+      {%- endfor %}
     </ul>
-</div>
+</nav>

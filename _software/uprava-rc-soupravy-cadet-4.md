@@ -48,7 +48,7 @@ v případě potřeby je možné tyto vstupy vyvést na povrch.
 
 Abych si úplně vysílačku nezničil a netrčel z ní někde drát, vyvedl
 jsem PPM signál do konektoru na přední část vysílačky. Při zapojení
-konektoru jsem se inspiroval z projektu [crrcsim IFAudio](http://sourceforge.net/apps/mediawiki/crrcsim/index.php?title=IFAudio)
+konektoru jsem se inspiroval z projektu [crrcsim IFAudio](https://sourceforge.net/apps/mediawiki/crrcsim/index.php?title=IFAudio)
 
 <figure>
   <img src="/images/rc-cadet/img_j_str_164_d5ae5a155ffe8c16dc8c2e2aed9ba7b2.jpg" alt="" />
@@ -82,7 +82,7 @@ anténa se bude protáčet dokola a bude zapadávat dovnitř.
 
 ## Testování
 
-Testování jsem prováděl s programem [crrcsim](http://sourceforge.net/apps/mediawiki/crrcsim/index.php?title=Download).
+Testování jsem prováděl s programem [crrcsim](https://sourceforge.net/apps/mediawiki/crrcsim/index.php?title=Download).
 Propojil jsem vysílač s počítačem pomocí kabelu Jack-Jack. Pro
 připojení je využit linkový vstup. Přes mikrofonní by to také možná
 nějak šlo, ale asi ne takto jednoduše. Nastavil jsem vstupní zesílení

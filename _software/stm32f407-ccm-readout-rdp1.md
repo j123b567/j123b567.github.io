@@ -1,5 +1,6 @@
 ---
 title: Reading CCM RAM on STM32F407 with Readout Protection Level 1
+lang: en
 date: 2026-11-06
 excerpt_separator: <!--more-->
 ---
@@ -309,11 +310,11 @@ memory:
 |----------|---------|---------|---------|
 | `g_ccm_counter` | `.ccmram` (CCM, initialised) | `0x1000_0000` | starts at `0xCC0D0000`, +2 per loop |
 | `g_ccm_persist` | `.ccmnoinit` (CCM, not initialised) | `0x1000_0004` | diagnostic record |
-| `g_ccm_pattern` | `.ccmnoinit` | `0x1000_0040` | 256 words `0xCC5A0000 \| i` |
+| `g_ccm_pattern` | `.ccmnoinit` | `0x1000_0040` | 256 words <code>0xCC5A0000 &#124; i</code> |
 | `g_sram_counter` | `.data` (SRAM, initialised) | `0x2000_0000` | starts at `0xC0DE0000`, +1 per loop |
 | `g_sram_persist` | `.noinit` (SRAM, not initialised) | `0x2000_00B0` | same diagnostic record |
-| `g_sram_pattern` | `.noinit` | `0x2000_00EC` | 256 words `0x5A5A0000 \| i` |
-| backup SRAM | — | `0x4002_4000` | 256 words `0xBB5A0000 \| i`, clock left on |
+| `g_sram_pattern` | `.noinit` | `0x2000_00EC` | 256 words <code>0x5A5A0000 &#124; i</code> |
+| backup SRAM | — | `0x4002_4000` | 256 words <code>0xBB5A0000 &#124; i</code>, clock left on |
 
 The counters are `volatile` and used for the LED output, so the compiler keeps
 them in memory. Check the addresses after each build with

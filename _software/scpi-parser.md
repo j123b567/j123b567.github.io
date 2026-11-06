@@ -1,5 +1,6 @@
 ---
 title: Open-Source SCPI / IEEE 488.2 Parser library
+lang: en
 date: 2012-11-18
 excerpt_separator: <!--more-->
 ---

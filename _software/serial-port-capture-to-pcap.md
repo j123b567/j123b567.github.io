@@ -1,5 +1,6 @@
 ---
 title: Serial port PCAP capture tool not just for Modbus/RTU
+lang: en
 date: 2017-03-24
 ---
 
